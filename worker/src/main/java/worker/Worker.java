@@ -43,6 +43,8 @@ class Worker {
       update.setString(2, voterID);
       update.executeUpdate();
     }
+    
+    System.err.println("updateVote");
   }
 
   static Jedis connectToRedis(String host) {
