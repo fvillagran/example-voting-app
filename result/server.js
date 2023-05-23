@@ -74,8 +74,8 @@ app.use(cookieParser());
 
 // Body-parser middleware
 //app.use(bodyParser());
-app.use(bodyparser.urlencoded({ extended: true }))
-app.use(bodyparser.json())
+app.use(bodyparser().urlencoded({ extended: true }))
+app.use(bodyparser().json())
 
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(function(req, res, next) {
