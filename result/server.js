@@ -71,9 +71,12 @@ function collectVotesFromResult(result) {
 }
 
 app.use(cookieParser());
+
+// Body-parser middleware
 //app.use(bodyParser());
-app.use(bodyParser.urlencoded());
-app.use(bodyParser.json());
+app.use(bodyparser.urlencoded({ extended: true }))
+app.use(bodyparser.json())
+
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
