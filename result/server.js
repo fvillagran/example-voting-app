@@ -72,10 +72,15 @@ function collectVotesFromResult(result) {
 
 app.use(cookieParser());
 
-// Body-parser middleware
-//app.use(bodyParser());
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+/*
 app.use(bodyparser().urlencoded({ extended: true }))
 app.use(bodyparser().json())
+*/
 
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(function(req, res, next) {
