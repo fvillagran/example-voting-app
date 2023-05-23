@@ -19,7 +19,7 @@ app.logger.setLevel(logging.INFO)
 def get_redis():
     if not hasattr(g, 'redis'):
         #g.redis = Redis(host="redis", db=0, socket_timeout=5)
-        g.redis = redis.Redis(host='redis', port=6379, username='redis', password='redis_password')
+        g.redis = redis.Redis(host='redis', port=6379, password='redis_password')
         g.redis.ping()
     return g.redis
 
